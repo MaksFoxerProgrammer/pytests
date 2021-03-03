@@ -31,10 +31,23 @@ def testlist():
 	s.append(4)
 	return s
 
+def ftest(x, y):
+	if (x == y):
+		return 1
+
 
 def test_testlist():
 	assert testlist() is not None
 
 
-def test_set_comparison():
-    assert s.append(3) 
+@pytest.mark.parametrize("x, y", [(5,5),
+	(8, 8)])
+def test_set_comparison(x, y):
+    assert ftest(x, y) == 1
+
+
+def test_testlist():
+	try:
+		assert testlist() is None
+	except AssertionError:
+		pass
