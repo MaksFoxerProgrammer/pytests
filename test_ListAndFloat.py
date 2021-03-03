@@ -23,6 +23,13 @@ def test_plus3():
 
 
 
+
+
+
+
+
+
+
 s = ['r', 125, None, ['2', 57]]
 
 
@@ -36,12 +43,13 @@ def ftest(x, y):
 		return 1
 
 
+
 def test_testlist():
 	assert testlist() is not None
 
 
-@pytest.mark.parametrize("x, y", [(5,5),
-	(8, 8)])
+@pytest.mark.parametrize("x, y", [[5,5],
+	[8, 8]])
 def test_set_comparison(x, y):
     assert ftest(x, y) == 1
 
